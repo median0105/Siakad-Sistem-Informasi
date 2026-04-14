@@ -80,12 +80,12 @@
         <section class="relative z-20 py-24 lg:py-32">
             <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
                 <div class="max-w-4xl mx-auto">
-                    {{-- <div
+                    <div
                         class="inline-flex items-center gap-3 bg-emerald-100/80 px-6 py-3 rounded-3xl backdrop-blur-sm mb-8">
                         <div class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></div>
                         <span class="text-sm font-semibold text-emerald-800">Sistem Akademik Modern &
                             Terintegrasi</span>
-                    </div> --}}
+                    </div>
                     <h1
                         class="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-slate-950 via-gray-900 to-slate-900 bg-clip-text text-transparent mb-8 leading-tight">
                         Kelola Akademik
