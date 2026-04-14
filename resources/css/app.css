@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --app-bg: 245 247 242;
+        --app-surface: 255 255 252;
+        --app-surface-soft: 248 250 245;
+        --app-border: 216 223 213;
+        --app-text: 18 30 24;
+        --app-muted: 95 109 100;
+        --app-primary: 24 70 52;
+        --app-primary-soft: 222 239 230;
+        --app-accent: 199 143 74;
+        --app-danger: 164 54 48;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply min-h-screen bg-stone-100 text-slate-900 antialiased;
+        background-image:
+            radial-gradient(circle at top left, rgba(199, 143, 74, 0.16), transparent 24rem),
+            radial-gradient(circle at top right, rgba(24, 70, 52, 0.12), transparent 30rem),
+            linear-gradient(180deg, rgba(255, 255, 252, 0.9), rgba(245, 247, 242, 1));
+    }
+
+    ::selection {
+        @apply bg-emerald-200 text-emerald-950;
+    }
+}
+
+@layer components {
+    .page-shell {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .page-stack {
+        @apply space-y-6;
+    }
+
+    .surface-card {
+        @apply rounded-[28px] border border-stone-200/80 bg-white/90 shadow-[0_20px_80px_-40px_rgba(20,33,24,0.35)] backdrop-blur;
+    }
+
+    .surface-card-soft {
+        @apply rounded-[24px] border border-stone-200/70 bg-stone-50/90 shadow-[0_16px_50px_-35px_rgba(20,33,24,0.28)];
+    }
+
+    .hero-card {
+        @apply relative overflow-hidden rounded-[32px] border border-stone-200/80 bg-white/90 shadow-[0_24px_90px_-45px_rgba(20,33,24,0.4)];
+    }
+
+    .hero-card::before {
+        content: "";
+        @apply absolute inset-0 opacity-90;
+        background:
+            radial-gradient(circle at top left, rgba(209, 161, 95, 0.18), transparent 28rem),
+            linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247, 249, 244, 0.92));
+    }
+
+    .hero-content {
+        @apply relative z-10 p-6 sm:p-8 lg:p-10;
+    }
+
+    .eyebrow {
+        @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-800/80;
+    }
+
+    .section-title {
+        @apply text-2xl sm:text-3xl font-semibold tracking-tight text-slate-950;
+    }
+
+    .section-copy {
+        @apply text-sm leading-6 text-slate-600;
+    }
+
+    .metric-card {
+        @apply rounded-[24px] border border-stone-200/80 bg-white/90 p-5 shadow-[0_18px_40px_-35px_rgba(20,33,24,0.4)];
+    }
+
+    .metric-label {
+        @apply text-xs font-medium uppercase tracking-[0.24em] text-slate-500;
+    }
+
+    .metric-value {
+        @apply mt-3 text-3xl font-semibold tracking-tight text-slate-950;
+    }
+
+    .metric-caption {
+        @apply mt-2 text-sm text-slate-600;
+    }
+
+    .data-panel {
+        @apply surface-card overflow-hidden;
+    }
+
+    .data-panel-header {
+        @apply flex flex-col gap-4 border-b border-stone-200/80 px-6 py-5 sm:flex-row sm:items-center sm:justify-between;
+    }
+
+    .data-panel-title {
+        @apply text-lg font-semibold text-slate-950;
+    }
+
+    .data-panel-subtitle {
+        @apply mt-1 text-sm text-slate-600;
+    }
+
+    .toolbar-link {
+        @apply inline-flex items-center justify-center rounded-full border border-emerald-900/10 bg-emerald-950 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-emerald-900;
+    }
+
+    .table-wrap {
+        @apply overflow-x-auto;
+    }
+
+    .data-table {
+        @apply min-w-full border-separate border-spacing-0 text-sm;
+    }
+
+    .data-table thead th {
+        @apply border-b border-stone-200 bg-stone-50/80 px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500;
+    }
+
+    .data-table tbody td {
+        @apply border-b border-stone-100 px-4 py-4 align-top text-slate-700;
+    }
+
+    .data-table tbody tr {
+        @apply transition hover:bg-stone-50/80;
+    }
+
+    .table-primary {
+        @apply font-medium text-slate-950;
+    }
+
+    .table-secondary {
+        @apply mt-1 text-xs text-slate-500;
+    }
+
+    .table-actions {
+        @apply whitespace-nowrap text-right;
+    }
+
+    .action-link {
+        @apply inline-flex items-center text-sm font-medium text-emerald-800 transition hover:text-emerald-950;
+    }
+
+    .action-link-danger {
+        @apply inline-flex items-center text-sm font-medium text-rose-700 transition hover:text-rose-900;
+    }
+
+    .status-pill {
+        @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium;
+    }
+
+    .status-pill-primary {
+        @apply border-emerald-200 bg-emerald-50 text-emerald-800;
+    }
+
+    .status-pill-muted {
+        @apply border-stone-200 bg-stone-100 text-slate-700;
+    }
+
+    .status-pill-warn {
+        @apply border-amber-200 bg-amber-50 text-amber-800;
+    }
+
+    .empty-state {
+        @apply rounded-[24px] border border-dashed border-stone-300 bg-stone-50/80 px-6 py-12 text-center;
+    }
+
+    .empty-state-title {
+        @apply text-lg font-semibold text-slate-900;
+    }
+
+    .empty-state-copy {
+        @apply mt-2 text-sm text-slate-600;
+    }
+
+    .form-shell {
+        @apply surface-card p-6 sm:p-8;
+    }
+
+    .form-grid {
+        @apply space-y-5;
+    }
+
+    .form-actions {
+        @apply flex flex-wrap items-center gap-3 pt-2;
+    }
+
+    .ghost-link {
+        @apply text-sm font-medium text-slate-600 transition hover:text-slate-950;
+    }
+
+    .alert-success {
+        @apply rounded-[20px] border border-emerald-200 bg-emerald-50/90 px-4 py-3 text-sm text-emerald-900;
+    }
+
+    .alert-danger {
+        @apply rounded-[20px] border border-rose-200 bg-rose-50/90 px-4 py-3 text-sm text-rose-900;
+    }
+
+    .auth-shell {
+        @apply relative grid min-h-screen overflow-hidden lg:grid-cols-[1.15fr_0.85fr];
+    }
+
+    .auth-shell::before {
+        content: "";
+        @apply absolute inset-0;
+        background:
+            radial-gradient(circle at top left, rgba(209, 161, 95, 0.22), transparent 26rem),
+            radial-gradient(circle at bottom right, rgba(24, 70, 52, 0.14), transparent 28rem);
+    }
+
+    .auth-brand {
+        @apply relative hidden px-10 py-12 lg:flex lg:flex-col lg:justify-between;
+    }
+
+    .auth-brand-panel {
+        @apply surface-card p-8;
+    }
+
+    .auth-form-wrap {
+        @apply relative flex items-center justify-center px-4 py-10 sm:px-6 lg:px-10;
+    }
+
+    .auth-form-card {
+        @apply w-full max-w-xl rounded-[32px] border border-stone-200/80 bg-white/80 p-6 shadow-[0_25px_100px_-45px_rgba(20,33,24,0.45)] backdrop-blur sm:p-8;
+    }
+}
