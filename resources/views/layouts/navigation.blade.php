@@ -51,10 +51,10 @@
                 </a>
 
                 @if($isAdmin)
-                    <a href="{{ route('admin.mata-kuliah.index') }}"
+                    {{-- <a href="{{ route('admin.mata-kuliah.index') }}"
                         class="px-4 py-2 text-sm rounded-xl {{ request()->routeIs('admin.mata-kuliah.*') ? 'bg-emerald-100 text-emerald-700' : 'hover:bg-emerald-50' }}">
                         Mata Kuliah
-                    </a>
+                    </a> --}}
                     <a href="{{ route('admin.kelas.index') }}"
                         class="px-4 py-2 text-sm rounded-xl {{ request()->routeIs('admin.kelas.*') ? 'bg-emerald-100 text-emerald-700' : 'hover:bg-emerald-50' }}">
                         Kelas

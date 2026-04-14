@@ -95,10 +95,10 @@
 
                 <div class="flex flex-wrap gap-4">
 
-                    <a href="{{ route('admin.mata-kuliah.create') }}"
+                    {{-- <a href="{{ route('admin.mata-kuliah.create') }}"
                         class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold shadow hover:shadow-lg hover:-translate-y-1 transition">
                         + Mata Kuliah
-                    </a>
+                    </a> --}}
 
                     <a href="{{ route('admin.dosen.create') }}"
                         class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow hover:shadow-lg hover:-translate-y-1 transition">

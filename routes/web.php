@@ -24,9 +24,7 @@ Route::prefix('admin')
     ->group(function () {
         Route::get('/dashboard', \App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
 
-        Route::resource('mata-kuliah', AdminMataKuliahController::class)
-            ->parameters(['mata-kuliah' => 'mataKuliah'])
-            ->except(['show']);
+        
         Route::resource('dosen', AdminDosenController::class)
             ->except(['show']);
         Route::resource('kelas', AdminKelasController::class)
